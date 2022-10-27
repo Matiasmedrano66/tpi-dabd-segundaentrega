@@ -1,0 +1,20 @@
+
+
+
+
+<div class="container inicio text-white" *ngIf="inicio">
+    <h1 class="titulo">Bienvenido al Juego de BlackJack!</h1>
+    <div class="form-group col-md-8">
+        <br />
+        Nombre de Usuario: <input class="form-control" type="text" name="nombre" [(ngModel)]="usuario.nombreUsuario"/>
+        <br />
+        Password: <input class="form-control" type="password" name="nombre" [(ngModel)]="usuario.password"/>
+        <br />
+        <br />
+        <button  (click)="comenzarJuego()" class="btn btn-success">Iniciar Sesion</button>
+    </div>
+  
+</div>
+<app-juego [usuario]="usuario" (finalizarJuego)="finalizar($event)" *ngIf="comenzar"></app-juego>
+
+<router-outlet></router-outlet>
